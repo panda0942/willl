@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+        <meta charset="UTF-8">
+        <meta
+            name="viewport"
+            content="width=device-width,
+        minimum-scale=1,initial-scale=1"
+        />
+
+        <style type="text/css">
+            *{
+                margin: 1;
+                padding: 1;
+            }
+
+            body {
+                overflow: hidden;
+                margin: 0;
+                font-family: "Inter", sans-serif;
+                float:left;
+            }
+
+            #background-div {
+                background: linear-gradient(-45deg, #000000, #000000, #001358, #000000, #000000, #000000);
+                background-size: 400% 400%;
+                -webkit-animation: gradientBG 60s ease infinite;
+                animation: gradientBG 60s ease infinite;
+                position: absolute;
+                z-index: -2;
+                width: 1920px;
+                height: 1080px;
+            }
+
+            @-webkit-keyframes gradientBG {
+                0% {
+                    background-position: 0% 50%;
+                }
+                50% {
+                    background-position: 100% 50%;
+                }
+                100% {
+                    background-position: 0% 50%;
+                }
+            }
+            @keyframes gradientBG {
+                0% {
+                    background-position: 0% 50%;
+                }
+                50% {
+                    background-position: 100% 50%;
+                }
+                100% {
+                    background-position: 0% 50%;
+                }
+            }
+            #bg {
+                position: absolute;
+                z-index: 99;
+                opacity: 0.2;
+                left: 40%;
+                top: 25%;
+            }
+
+            #menu-bar {
+                z-index: 99;
+
+                margin: 0;
+                position: fixed;
+                padding-right: 5px;
+                width: 90px;
+                height: 100%;
+                border-right: 4px solid #0047ff;
+                box-shadow: 15px 0px 20px -20px white;
+            }
+
+            .menu-item {
+                width: 75px;
+                padding-left: 10px;
+                padding-bottom: 5px;
+                filter: drop-shadow(0px -1px 2px white);
+            }
+
+            .locked {
+                filter: brightness(30%);
+                cursor: not-allowed;
+                pointer-events: none;
+            }
+            .circleDiv1{
+                border-style: solid;
+                color: white;
+                border-color: transparent;
+                border-width: 1px;
+                height:80px;
+                width:63%;
+                margin-left: 110px;
+                padding-top: 10px;
+                padding-bottom: 30px;
+            }
+            
+            .allCircles{
+            border-radius: 50%;
+            width:80px;
+            height:80px;
+            font-size:14.5px;
+            border-style: solid;
+            border-width: 2.5px;
+            border-color: #0047ff;
+            filter: drop-shadow(0px -1px 2px white);
+            background-color: transparent;
+            color: white;
+            }
+            .allCircles:hover{
+                border-width: 3.5px;
+            }
+            section{
+                width: 100%;
+            }
+            #tam{
+                margin-left: 250px;
+            }
+            #WBII{
+                margin-left: 40px;
+            }
+            #start{
+                width: 140px;
+                border-style: solid;
+                border-top-left-radius: 35px;
+                border-bottom-left-radius: 35px;
+                border-top-right-radius: 35px;
+                border-bottom-right-radius: 35px;
+                padding-left: 20px;
+                padding-right: 20px;
+                height: 70px;
+                margin-top: 3px;                
+            }
+            #firstdiv{
+                height: 15px;
+            }
+            .line{
+                position: absolute;
+                left: 260px;
+                top: 475px;
+                border-color:#0047ff ;
+                width: 40px;
+                height: 2px;
+                background-color: #0047ff;
+                border-width: 0px;
+                border-style: solid;
+                filter: drop-shadow(0px -1px 2px white);
+            }
+            .line1{
+                position: absolute;
+                left: 397px;
+                top: 475px;
+                border-color:#0047ff ;
+                width: 40px;
+                height: 2px;
+                background-color: #0047ff;
+                border-width: 0px;
+                border-style: solid;
+                filter: drop-shadow(0px -1px 2px white);
+            }
+            
+            .line2{
+                position: absolute;
+                left: 534px;
+                top: 475px;
+                border-color:#0047ff ;
+                width: 40px;
+                height: 2px;
+                background-color: #0047ff;
+                border-width: 0px;
+                border-style: solid;
+                filter: drop-shadow(0px -1px 2px white);
+            }
+            
+            .line3{
+                position: absolute;
+                left: 673px;
+                top: 475px;
+                border-color:#0047ff ;
+                width: 40px;
+                height: 2px;
+                background-color: #0047ff;
+                border-width: 0px;
+                border-style: solid;
+                filter: drop-shadow(0px -1px 2px white);
+            }
+            
+            .line4{
+                position: absolute;
+                left: 812px;
+                top: 475px;
+                border-color:#0047ff ;
+                width: 40px;
+                height: 2px;
+                background-color: #0047ff;
+                border-width: 0px;
+                border-style: solid;
+                filter: drop-shadow(0px -1px 2px white);
+            }
+            
+            .line5{
+                position: absolute;
+                left: 946px;
+                top: 475px;
+                border-color:#0047ff ;
+                width: 40px;
+                height: 2px;
+                background-color: #0047ff;
+                border-width: 0px;
+                border-style: solid;
+                filter: drop-shadow(0px -1px 2px white);
+            }
+            
+            .line6{
+                position: absolute;
+                left: 1085px;
+                top: 475px;
+                border-color:#0047ff ;
+                width: 40px;
+                height: 2px;
+                background-color: #0047ff;
+                border-width: 0px;
+                border-style: solid;
+                filter: drop-shadow(0px -1px 2px white);
+            }
+            
+            .line7{
+                position: absolute;
+                left: 808px;
+                top: 595px;
+
+                border-color:#0047ff ;
+                width: 40px;
+                height: 2px;
+                background-color: #0047ff;
+                border-width: 0px;
+                border-style: solid;
+                filter: drop-shadow(0px -1px 2px white);
+            }
+            
+            .line8{
+                position: absolute;
+                left: 810px;
+                top: 350px;
+                border-color:#0047ff ;
+                width: 40px;
+                height: 2px;
+                background-color: #0047ff;
+                border-width: 0px;
+                border-style: solid;
+                filter: drop-shadow(0px -1px 2px white);
+            }
+            
+            .line9{
+                position: absolute;
+                left: 195px;
+                top: 225px;
+                border-color:#0047ff ;
+                width: 40px;
+                height: 2px;
+                background-color: #0047ff;
+                border-width: 0px;
+                border-style: solid;
+                filter: drop-shadow(0px -1px 2px white);
+            }
+            
+            .dline1{
+                position: absolute;
+                left: 300px;
+                top: 160px;
+                border-color:#0047ff ;
+                width: 60px;
+                height: 2px;
+                background-color: #0047ff;
+                border-width: 0px;
+                border-style: solid;
+                filter: drop-shadow(0px -1px 2px white);
+                transform: rotate(315deg);
+            }
+            
+            .dline2{
+                position: absolute;
+                left: 310px;
+                top: 290px;
+                border-color:#0047ff ;
+                width: 60px;
+                height: 2px;
+                background-color: #0047ff;
+                border-width: 0px;
+                border-style: solid;
+                filter: drop-shadow(0px -1px 2px white);
+                transform: rotate(45deg);
+            }
+            
+            .dline3{
+                position: absolute;
+                left: 660px;
+                top: 400px;
+                border-color:#0047ff ;
+                width: 60px;
+                height: 2px;
+                background-color: #0047ff;
+                border-width: 0px;
+                border-style: solid;
+                filter: drop-shadow(0px -1px 2px white);
+                transform: rotate(320deg);
+            }
+            
+            .dline4{
+                position: absolute;
+                left: 950px;
+                top: 400px;
+                border-color:#0047ff ;
+                width: 60px;
+                height: 2px;
+                background-color: #0047ff;
+                border-width: 0px;
+                border-style: solid;
+                filter: drop-shadow(0px -1px 2px white);
+                transform: rotate(41deg);
+            }
+            
+            .dline5{
+                position: absolute;
+                left: 655px;
+                top: 545px;
+                border-color:#0047ff ;
+                width: 60px;
+                height: 2px;
+                background-color: #0047ff;
+                border-width: 0px;
+                border-style: solid;
+                filter: drop-shadow(0px -1px 2px white);
+                transform: rotate(41deg);
+            }
+            
+            .dline6{
+                position: absolute;
+                left: 937px;
+                top: 547px;
+                border-color:#0047ff ;
+                width: 60px;
+                height: 2px;
+                background-color: #0047ff;
+                border-width: 0px;
+                border-style: solid;
+                filter: drop-shadow(0px -1px 2px white);
+                transform: rotate(320deg);
+            }
+            #wbii{
+                margin-left: 44px;
+            }
+            #i{
+                margin-left: 53px;
+            }
+            #ii{
+                margin-left: 53px;
+            }
+            #iii{
+                margin-left: 53px; 
+            }
+            
+            #ei{
+                margin-left: 53px; 
+            }
+            
+            #eii{
+                margin-left: 53px; 
+            }
+            
+            #tai{
+                margin-left: 53px; 
+            }
+            
+            #sri{
+                margin-left: 53px; 
+            }
+            #ci{
+                margin-left:610px ;
+            }
+            #cii{
+                margin-left: 50px;
+            }
+            #fi{
+                margin-left: 280px;
+            }
+            #fii{
+                margin-left: 47px;
+            }
+            .wb_words{
+                position: relative;
+                top: 17px;
+                font-size: 11px;
+                font-weight: 100;
+
+            }
+            
+            
+        </style>
+    </head>
+
+    <body>
+        <div id="background-div">
+            <img id="bg" src="remove.png" />
+            <div style="border: 0px solid blue; cursor: pointer;">
+                <nav id="menu-bar">
+                    <div id="manu-inner">
+                        <div>
+                            <a class="" href=""><img class="menu-item" style="padding-top: 10px;" src="https://i.imgur.com/j9Ahw9q.png" /></a>
+                        </div>
+                        <div>
+                            <a class="locked" href="../"><img class="menu-item" src="https://i.imgur.com/IOh52pE.png" /></a>
+                        </div>
+                        <div>
+                            <a class="locked" href="../"><img class="menu-item" src="https://i.imgur.com/KIr5m5o.png" /></a>
+                        </div>
+                        <div>
+                            <a class="locked" href=""><img class="menu-item" src="https://i.imgur.com/F1oHSwJ.png" /></a>
+                        </div>
+                        <div>
+                            <a class="locked" href="../"><img class="menu-item" src="https://i.imgur.com/i00tgW6.png" /></a>
+                        </div>
+                        <div>
+                            <a class="locked" href="../"><img class="menu-item" src="https://i.imgur.com/llhVBiG.png" /></a>
+                        </div>
+                        <div>
+                            <a class="" href=""><img class="menu-item" src="https://i.imgur.com/XPGwDRs.png" /></a>
+                        </div>
+                        <div>
+                            <a class="locked" href="../"><img class="menu-item" src="https://i.imgur.com/8p7WmTI.png" /></a>
+                        </div>
+                        <div>
+                            <a class="locked" href="../"><img class="menu-item" src="https://i.imgur.com/Ii19JBW.png" /></a>
+                        </div>
+                        <div>
+                            <a class="locked" href="../"><img class="menu-item" src="https://i.imgur.com/hymE2Pn.png" /></a>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+
+            <section>
+                <!-- 	PUT THE CODE FOR THE ACADEMY SKILLTREE HERE	-->
+                <div class="circleDiv1" id="firstdiv">
+                </div>
+
+                <div class="circleDiv1" id="WBterminal" >
+                    <button class="allCircles" id="tam"><h1><a href="#" style="color:white; text-decoration: none;">TAM</a></h1> <p class="wb_words" id="">WB terminal</p></button>
+                </div>
+                <div class="circleDiv1">
+                    <button class="allCircles"><h1><a href="#" style="color:white; text-decoration: none;">WBI</a></h1> <p class="wb_words" id="">Introduction to WillBear</p></button>
+                    <div class="line9"></div>
+                    <button class="allCircles" id="wbii"><h1><a href="#" style="color:white; text-decoration: none;">WBII</a></h1> <p class="wb_words" id="">WB platform Overview</p></button>
+                </div>
+                <div class="circleDiv1">
+                    <button class="allCircles" id="tam"><h1><a href="#" style="color:white; text-decoration: none;">TAM</a></h1> <p class="wb_words" id="">Technical Analysis Module</p></button>
+                    <button class="allCircles" id="fi"><h1><a href="#" style="color:white; text-decoration: none;">FI</a></h1> <p class="wb_words" id="">Forex Introduction</p></button>
+                    <div class="line8"></div>
+                    <button class="allCircles" id="fii"><h1><a href="#" style="color:white; text-decoration: none;">FII</a></h1> <p class="wb_words" id="">Forex Platform</p></button>
+                </div>
+                <div class="circleDiv1">
+                    <button class="allCircles" id="start"><h1><a style="color:white; text-decoration: none;">Start</a></h1></button>
+                    <div class="line"></div>
+                    <button class="allCircles" id="i"><h1><a href="#" style="color:white; text-decoration: none;" >I</a></h1> <p class="wb_words" id="">Introduction</p></button>
+                    <div class="line1"></div>
+                    <button class="allCircles" id="ii"><h1><a href="#"  style="color:white; text-decoration: none;" >II</a></h1> <p class="wb_words" id="">Trading vs Investments</p></button>
+                    <div class="line2"></div>
+                    <button class="allCircles" id="iii"><h1><a href="#"  style="color:white; text-decoration: none;">III</a></h1> <p class="wb_words" id="">DCA</p></button>
+                    <div class="line3"></div>
+                    <button class="allCircles" id="ei"><h1><a href="#"  style="color:white; text-decoration: none;">EI</a></h1> <p class="wb_words" id="">Equities Introduction</p></button>
+                    <div class="line4"></div>
+                    <button class="allCircles" id="eii"><h1><a href="#"  style="color:white; text-decoration: none;">EII</a></h1> <p class="wb_words" id="">Equities platforms</p></button>
+                    <div class="line5"></div>
+                    <button class="allCircles" id="tai"><h1><a href="#"  style="color:white; text-decoration: none;">TAI</a></h1> <p class="wb_words" id="">Technical Analysis Introduction</p></button>
+                    <div class="line6"></div>
+                    <button class="allCircles" id="sri"><h1><a href="#"  style="color:white; text-decoration: none;">SRI</a></h1> <p class="wb_words" id="">Support & Resistance</p></button>
+                </div>
+                <div class="circleDiv1">
+                    <button class="allCircles" id="ci"><h1><a href="#" style="color:white; text-decoration: none;">CI</a></h1> <p class="wb_words" id="">Cryptocurrency Introduction</p></button>
+                    <div class="line7"></div>
+                    <button class="allCircles" id="cii"><h1><a href="#" style="color:white; text-decoration: none;">CII</a></h1> <p class="wb_words" id="">Cryptocurrency Platforms</p></button>
+                </div>
+                <div class="circleDiv1" id="firstdiv">
+                </div>
+
+            <!--diagonal lines-->
+            <div class="dline1"></div>
+            <div class="dline2"></div>
+            <div class="dline3"></div>
+            <div class="dline4"></div>
+            <div class="dline5"></div>
+            <div class="dline6"></div>
+
+            </section>
+        </div>
+        <script src="will.js"></script>
+    </body>
+</html>
